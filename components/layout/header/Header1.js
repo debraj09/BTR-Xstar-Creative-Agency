@@ -4,35 +4,40 @@ import Menu from "../Menu"
 export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isSidebar, handleSidebar, isSearch, handleSearch }) {
     return (
         <>
-
-            <header className={`header-section cmn-fixed py-lg-0 py-6 ${scroll ? "animated fadeInDown header-fixed" : ""}`}>
+            {/* Background set to black to match screenshot, text forced to bold black where needed */}
+            <header 
+                style={{ backgroundColor: '#000', color: '#fff' }} 
+                className={`header-section cmn-fixed py-lg-0 py-6 ${scroll ? "animated fadeInDown header-fixed" : ""}`}
+            >
                 <div className="container">
                     <div className="main-navbar">
                         <nav className="navbar-custom">
                             <div className="d-lg-flex flex-xl-nowrap flex-wrap align-items-center justify-content-lg-between">
                                 <div className="d-flex align-items-center justify-content-between">
                                     <Link href="/" className="brand-logo">
-                                        <img className="w-100" src="/assets/img/logo/logo.png" alt="logo" />
+                                        <img style={{ height: 70, width: 100 }} src="/assets/img/logo/logo.png" alt="logo" />
                                     </Link>
                                     <div className="d-flex align-items-center gap-xxl-5 gap-5">
                                         <Link href="/javascript:void(0)" className="search-trigger search-icon d-lg-none d-block">
-                                            <i className="fal fa-search" />
+                                            <i className="fal fa-search" style={{ color: 'white' }} />
                                         </Link>
                                         <button className={`navbar-toggle-btn d-block d-lg-none ${isMobileMenu ? "open" : ""}`} type="button" onClick={handleMobileMenu}>
-                                            <span />
-                                            <span />
-                                            <span />
-                                            <span />
+                                            <span style={{ backgroundColor: 'white' }} />
+                                            <span style={{ backgroundColor: 'white' }} />
+                                            <span style={{ backgroundColor: 'white' }} />
+                                            <span style={{ backgroundColor: 'white' }} />
                                         </button>
                                     </div>
                                 </div>
+
                                 <div className="navbar-toggle-item" style={{ display: `${isMobileMenu ? "block" : "none"}` }}>
                                     <Menu />
                                 </div>
+
                                 <div className="d-lg-flex d-none d-grid justify-content-center ph-clickwrap align-items-center gap-xxl-7 gap-xl-6 gap-lg-5 gap-3">
-                                    <div className="search-shopcart d-flex gap-xxl-9 gap-xl-5 gap-3">
+                                    {/* <div className="search-shopcart d-flex gap-xxl-9 gap-xl-5 gap-3">
                                         <a onClick={handleSearch} className="search-trigger search-icon">
-                                            <i className="fal fa-search" />
+                                            <i className="fal fa-search" style={{ color: 'white' }} />
                                         </a>
                                         <Link href="/contact" className="shop-cart">
                                             <svg width={17} height={16} viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,10 +53,21 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isSide
                                                 </defs>
                                             </svg>
                                         </Link>
-                                    </div>
-                                    <Link href="/contact" className="d-flex align-items-center gap-sm-3 gap-2 touch-btn cmn-btn">
+                                    </div> */}
+                                    
+                                    {/* Updated "Get In Touch" to be Black Text and Bold on a Red button to match theme */}
+                                    <Link 
+                                        href="/contact" 
+                                        className="d-flex align-items-center gap-sm-3 gap-2 touch-btn cmn-btn"
+                                        style={{ 
+                                            backgroundColor: '#e60000', 
+                                            color: '#000', 
+                                            fontWeight: 'bold',
+                                            border: 'none' 
+                                        }}
+                                    >
                                         <span className="rot60">
-                                            <i className="fas fa-arrow-up" />
+                                            <i className="fas fa-arrow-up" style={{ color: '#000' }} />
                                         </span>
                                         Get In Touch
                                     </Link>
@@ -61,7 +77,6 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isSide
                     </div>
                 </div>
             </header>
-
         </>
     )
 }

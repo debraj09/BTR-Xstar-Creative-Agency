@@ -13,7 +13,6 @@ export default function VideoPopup({ style }) {
                     <span className="icon">
                         <i className="fas fa-play" />
                     </span>
-                    <img src="/assets/img/element/bn1-circle.png" alt="img" className="hero-circle" />
                 </a>
             }
             {style === 2 &&

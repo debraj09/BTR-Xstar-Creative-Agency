@@ -4,7 +4,7 @@ export default function Footer1() {
     return (
         <>
 
-            <footer className="footer-version-one zindex1 position-relative">
+            {/* <footer className="footer-version-one zindex1 position-relative">
                 <div className="container">
                     <div className="footer-topversion-one pt-20 pb-20">
                         <div className="row gy-lg-0 gy-10 mt-xxl-5 mb-xxl-5 justify-content-sm-between justify-content-center">
@@ -215,7 +215,7 @@ export default function Footer1() {
                         </p>
                     </div>
                 </div>
-            </footer>
+            </footer> */}
 
         </>
     )

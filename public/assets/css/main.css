@@ -9,24 +9,34 @@ Version: 1.0.0
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 :root {
-    --body: #ffffff;
-    --black: #000;
-    --white: #fff;
-    --spantext: #757575;
-    --theme: #E3FF04;
-    --bg1: #161616;
-    --bg2: #1b1b1b;
-    --bg3: #fff;
-    --border1: #454750;
-    --pra-clr: #bebebe;
+    /* Main Backgrounds */
+    --black: #000000;
+    --bg1: #0a0a0a;           /* Deep black for main sections */
+    --bg2: #121212;           /* Slightly lighter black for cards/containers */
+    
+    /* Theme & Accents */
+    --theme: #e60000;         /* The vibrant red seen in "LEARN MORE" and the border */
+    --body: #e60000;          /* Red accent for scrollbars or highlights */
+    
+    /* Text Colors */
+    --white: #ffffff;         /* For Headings like "Pollution Certificate" */
+    --pra-clr: #9ea1a6;       /* The muted grey used for the paragraph text */
+    --spantext: #757575;      /* Darker grey for secondary details */
+    --bspan: #ababab;
+    
+    /* Borders & UI Elements */
+    --border1: #3d0000;       /* Dark red border glow/outline */
+    --tag: #2a2a2a;           /* Background for the inactive dots */
     --dd-clr: #dadada;
     --place: #858585;
-    --tag: #646464;
-    --bspan: #ababab;
+    
+    /* Typography */
     --jakarta: "Plus Jakarta Sans", sans-serif;
     --manrope: "Manrope", sans-serif;
 }
-
+.swiper-pagination-bullet-active {
+    background: #e60000 !important; /* Red pagination dots to match theme */
+}
 /* -----------------------
     Template Default Fonts
  ------------------------- */
@@ -41,7 +51,111 @@ body {
     margin: 0;
     overflow-x: hidden;
 }
+/* Add to your global CSS file */
+.custom-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
 
+.custom-nav .menu-item {
+    position: relative;
+}
+
+.custom-nav .menu-item > a,
+.custom-nav .menu-item > button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.custom-nav .menu-item > a:hover,
+.custom-nav .menu-item > button:hover {
+    color: #e3ff04;
+}
+
+.custom-nav .menu-item > a.active,
+.custom-nav .menu-item > button.active {
+    color: #e3ff04;
+}
+
+.custom-nav .menu-item > a::before,
+.custom-nav .menu-item > button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e3ff04'%3E%3Cpath d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.custom-nav .menu-item > a:hover::before,
+.custom-nav .menu-item > button:hover::before,
+.custom-nav .menu-item > a.active::before,
+.custom-nav .menu-item > button.active::before {
+    opacity: 1;
+}
+
+.sub-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-width: 200px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sub-menu .menu-link a {
+    display: block;
+    padding: 8px 16px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.sub-menu .menu-link a:hover {
+    background-color: rgba(227, 255, 4, 0.1);
+    color: #e3ff04;
+    padding-left: 20px;
+}
+
+.sub-menu .menu-link a.active-service {
+    background-color: rgba(227, 255, 4, 0.15);
+    color: #e3ff04;
+    font-weight: 600;
+}
 ul {
     padding: 0;
     margin: 0;

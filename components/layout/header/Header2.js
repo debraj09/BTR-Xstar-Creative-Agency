@@ -12,7 +12,7 @@ export default function Header2({ scroll, isMobileMenu, handleMobileMenu, isSide
                             <div className="d-lg-flex flex-xl-nowrap flex-wrap align-items-center justify-content-lg-between">
                                 <div className="d-flex align-items-center justify-content-between">
                                     <Link href="/" className="brand-logo">
-                                        <img className="w-100" src="assets/img/logo/logo.png" alt="logo" />
+                                        <img style={{ height: 70, width: 100 }} src="assets/img/logo/logo.png" alt="logo" />
                                     </Link>
                                     <button className={`navbar-toggle-btn d-block d-lg-none ${isMobileMenu ? "open" : ""}`} type="button" onClick={handleMobileMenu}>
                                         <span />

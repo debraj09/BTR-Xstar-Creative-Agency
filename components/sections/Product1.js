@@ -9,7 +9,7 @@ export default function Product1() {
                     <div className="row g-xxl-7 g-5">
                         <div className="col-lg-6 col-md-6 col-sm-8">
                             <div className="about-product-thumb w-100" data-aos="zoom-in" data-aos-duration={2000}>
-                                <img src="/assets/img/about/about-v1thumb.png" alt="img" className="w-100" />
+                                <img src="/assets/img/about/btrdummy.png" alt="img" className="w-100" />
                             </div>
                         </div>
                         <div className="col-lg-6">
